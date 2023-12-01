@@ -17,7 +17,8 @@ export default {
             },
             backgroundImage :
             {
-                'leafs' : "url('public/App_icons/Landing_page.png')"
+                'leafs' : "url('public/App_icons/Landing_page.png')",
+                'icon-logout': "url('public/App_icons/Group.png')"
             },
             colors :
             {

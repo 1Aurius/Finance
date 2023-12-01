@@ -17,7 +17,7 @@ class ExpenseFactory extends Factory
     public function definition(): array
     {
         return [
-            'user_id' => 11,
+            'user_id' => 14,
             'ammount' => 69,
             'note'    => 'test',
             'type'    => 1

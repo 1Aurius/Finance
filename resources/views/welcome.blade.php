@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="icon" href="{{ asset('App_icons/brand.svg') }}">
     <title>{{ config('app.name', 'Laravel') }}</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <title>Document</title>
  </head>
 
     <body class="flex w-full m-auto bg-[url('/public/App_icons/Landing_page.png')] bg-cover bg-fixed  h-screen">
@@ -16,7 +16,7 @@
             <div class="flex w-full h-screen">
                 <div class="flex flex-col w-1/2 h-full ">
                     <p class=" text-[38px] flex h-min grow w-full items-center font-bold">
-                        Learn a new way to Save & Manage your finances
+                        Leatn a new way to manage your money
                     </p>
                 </div>
                 <div class="flex flex-col w-1/2 h-full">
@@ -35,7 +35,7 @@
                         <path d="M0 7.25H22.5M17.5 1L22.3358 5.83579C23.1168 6.61683 23.1168 7.88316 22.3358 8.66421L17.5 13.5M25 19.75H2.5M7.5 13.5L2.66421 18.3358C1.88317 19.1168 1.88316 20.3832 2.66421 21.1642L7.5 26" stroke="white" stroke-width="2"/>
                     </svg>
                     <h1 class="font-bold text-red-800 titulo">asd</h1>
-                    <p class=" content">asd</p>
+                    <p class=" content"></p>
                     @endcomponent
 
                     @component('components.feature-holder')

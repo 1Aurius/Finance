@@ -9,8 +9,35 @@
         <!--implement time-->
 
             <div class="flex flex-col w-full">
-                <h1 class=" text-[22px] font-medium text-text p-4">Good day {{ Auth::user()->id }}</h1>
+                <h1 class=" text-[22px] font-medium text-text p-4">Good day {{ Auth::user()->name }}</h1>´
             </div>
+
+            @component('components.Form')
+
+            @slot('form_title')  nigga  @endslot
+            @slot('method')      Post   @endslot
+            @slot('action')      /      @endslot
+
+            @slot('input_slot')
+
+            @component('components.PrimaryButton')
+            @slot('type') 1 @endslot
+            Submit
+            @endcomponent
+
+            @component('components.PrimaryButton')
+            @slot('type') 2 @endslot
+            Cancel
+            @endcomponent
+
+            @component('components.PrimaryButton')
+            @slot('type') 3 @endslot
+            Delete
+            @endcomponent
+
+            @endslot
+
+            @endcomponent
             <!--DO NOT CLOSE THIS-->
     @endsection
 </x-app-layout>

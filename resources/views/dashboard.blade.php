@@ -9,12 +9,12 @@
         <!--implement time-->
 
             <div class="flex flex-col w-full">
-                <h1 class=" text-[22px] font-medium text-text p-4">Good day {{ Auth::user()->name }}</h1>´
+                <h1 class=" text-[22px] font-medium text-text p-4">Good day <strong class=" text-highlight">{{ Auth::user()->name }}</strong></h1>
             </div>
-
+            {{--
             @component('components.Form')
 
-            @slot('form_title')  nigga  @endslot
+            @slot('form_title')  sick  @endslot
             @slot('method')      Post   @endslot
             @slot('action')      /      @endslot
 
@@ -39,5 +39,6 @@
 
             @endcomponent
             <!--DO NOT CLOSE THIS-->
+            --}}
     @endsection
 </x-app-layout>

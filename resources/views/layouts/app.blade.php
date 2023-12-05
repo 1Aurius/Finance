@@ -66,14 +66,13 @@
             var data = google.visualization.arrayToDataTable(window.data_for_the_chart);
 
             var options = {
-                'backgroundColor': 'transparent',
-                'bottom': 32,
-                'height': '100%',
-                'left': 32,
-                'right': 16,
-                'top': 32,
-                'width': '100%',
-                'pieHole': 0.7,
+                chartArea: {
+                width: '94%',
+                height: '94%'
+                },
+                'backgroundColor':'none',
+                'pieHole':0.7,
+                'legend':'none'
             };
 
             var chart = new google.visualization.PieChart(document.getElementById('chart_div'));

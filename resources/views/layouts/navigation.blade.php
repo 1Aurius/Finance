@@ -1,6 +1,6 @@
 <nav x-data="{ open: false }" class="h-full w-min">
     <!-- Primary Navigation Menu -->
-    <div class="p-4 w-[66px] dark:bg-sidebar rounded-[12px] h-full ">
+    <div class="p-4 w-[70px] dark:bg-sidebar rounded-[12px] h-full ">
         <div class="flex flex-col justify-between h-full">
             <div class="flex flex-col h-full ">
                 <!-- Logo -->
@@ -12,21 +12,22 @@
                     </div>
 
                     <!-- Navigation Links -->
-                    <div class="hidden sm:flex py-2 pl-1 rounded-[4px] hover:bg-cardHighlight">
+                    <div class="hidden sm:flex py-1 pl-1 pr-2 rounded-[4px] hover:bg-cardHighlight">
                         <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                 <path d="M12 12L21 12M12 3L12 21M7.8 3H16.2C17.8802 3 18.7202 3 19.362 3.32698C19.9265 3.6146 20.3854 4.07354 20.673 4.63803C21 5.27976 21 6.11984 21 7.8V16.2C21 17.8802 21 18.7202 20.673 19.362C20.3854 19.9265 19.9265 20.3854 19.362 20.673C18.7202 21 17.8802 21 16.2 21H7.8C6.11984 21 5.27976 21 4.63803 20.673C4.07354 20.3854 3.6146 19.9265 3.32698 19.362C3 18.7202 3 17.8802 3 16.2V7.8C3 6.11984 3 5.27976 3.32698 4.63803C3.6146 4.07354 4.07354 3.6146 4.63803 3.32698C5.27976 3 6.11984 3 7.8 3Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </x-nav-link>
                     </div>
-                    <div class="hidden sm:flex py-2 pl-1 rounded-[4px] hover:bg-cardHighlight">
+
+                    <div class="hidden sm:flex py-1 pl-1 pr-1 rounded-[4px] hover:bg-cardHighlight">
                         <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                 <path d="M22 21V19C22 17.1362 20.7252 15.5701 19 15.126M15.5 3.29076C16.9659 3.88415 18 5.32131 18 7C18 8.67869 16.9659 10.1159 15.5 10.7092M17 21C17 19.1362 17 18.2044 16.6955 17.4693C16.2895 16.4892 15.5108 15.7105 14.5307 15.3045C13.7956 15 12.8638 15 11 15H8C6.13623 15 5.20435 15 4.46927 15.3045C3.48915 15.7105 2.71046 16.4892 2.30448 17.4693C2 18.2044 2 19.1362 2 21M13.5 7C13.5 9.20914 11.7091 11 9.5 11C7.29086 11 5.5 9.20914 5.5 7C5.5 4.79086 7.29086 3 9.5 3C11.7091 3 13.5 4.79086 13.5 7Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </x-nav-link>
                     </div>
-                    <div class="hidden sm:flex py-2 pl-1 rounded-[4px] hover:bg-cardHighlight">
+                    <div class="hidden sm:flex py-1 pl-1 pr-1 rounded-[4px] hover:bg-cardHighlight">
                         <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                 <path d="M12 12.5C11.0717 12.5 10.1815 12.8687 9.52513 13.5251C8.86875 14.1815 8.5 15.0717 8.5 16C8.5 16.9283 8.86875 17.8185 9.52513 18.4749C10.1815 19.1313 11.0717 19.5 12 19.5C12.9283 19.5 13.8185 19.1313 14.4749 18.4749C15.1313 17.8185 15.5 16.9283 15.5 16C15.5 15.0717 15.1313 14.1815 14.4749 13.5251C13.8185 12.8687 12.9283 12.5 12 12.5ZM10.5 16C10.5 15.6022 10.658 15.2206 10.9393 14.9393C11.2206 14.658 11.6022 14.5 12 14.5C12.3978 14.5 12.7794 14.658 13.0607 14.9393C13.342 15.2206 13.5 15.6022 13.5 16C13.5 16.3978 13.342 16.7794 13.0607 17.0607C12.7794 17.342 12.3978 17.5 12 17.5C11.6022 17.5 11.2206 17.342 10.9393 17.0607C10.658 16.7794 10.5 16.3978 10.5 16Z" fill="white"/>
@@ -50,10 +51,16 @@
                         </svg>
                     </div>
 
-                    <div class="py-2 pl-1 rounded-[4px] hover:bg-cardHighlight">
-                        <form method="POST" action="{{ route('logout') }}">
+                    <div class="py-1 pl-1 pr-1 rounded-[4px] hover:bg-cardHighlight" >
+                        <form action="{{ route('Logout') }}" method="POST" class=" p-[3px]">
                             @csrf
-                            <input type="submit" class="text-transparent  bg-icon-logout" value="a ">
+                            @method('DELETE')
+                            <button type="submit">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 16 22" fill="none" class="">
+                                    <path d="M1 1H12C12.7956 1 13.5587 1.31607 14.1213 1.87868C14.6839 2.44129 15 3.20435 15 4V18C15 18.2652 14.8946 18.5196 14.7071 18.7071C14.5196 18.8946 14.2652 19 14 19H11" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M8 11V13M1 1L8.588 2.518C9.268 2.65392 9.87991 3.02121 10.3197 3.55739C10.7594 4.09358 10.9998 4.76555 11 5.459V19.78C10.9999 19.9279 10.967 20.0739 10.9037 20.2076C10.8404 20.3412 10.7482 20.4592 10.6338 20.5529C10.5194 20.6466 10.3856 20.7138 10.2422 20.7496C10.0987 20.7854 9.94902 20.789 9.804 20.76L2.608 19.322C2.15444 19.2313 1.74633 18.9863 1.45314 18.6286C1.15995 18.2708 0.999817 17.8225 1 17.36V1Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                            </button>
                         </form>
                     </div>
 

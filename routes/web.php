@@ -3,10 +3,14 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RightSidebarDataFetch;
 use App\Models\User;
+use App\Models\Expense;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\DashboardGraphDataFetch;
+use Illuminate\Support\Carbon;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,11 +22,7 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 |
 */
 
-Route::get('/', function () {
-
-    return view('welcome');
-
-});
+Route::get('/', function(){return view('welcome');});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -36,6 +36,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/Logout', [AuthenticatedSessionController::class, 'destroy'])->name('Logout');
 });
 
+
+Route::get('/DashboardGraphDataFetch.php',DashboardGraphDataFetch::class);
 Route::get('/RightSidebarDataFetch.php',RightSidebarDataFetch::class);
 
 require __DIR__.'/auth.php';

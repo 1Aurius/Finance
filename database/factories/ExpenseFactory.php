@@ -18,8 +18,8 @@ class ExpenseFactory extends Factory
     {
         return [
             'user_id' => 14,
-            'ammount' => 69,
-            'note'    => 'test',
+            'ammount' => random_int(1,100),
+            'note'    => 'text',
             'type'    => 1
          ];
     }

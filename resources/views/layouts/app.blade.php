@@ -31,7 +31,7 @@
                     var img = document.createElement("img");
                     img.src="{{ asset('App_icons/Food.svg') }}"
 
-                    //! Add a limit to this to limit entropy
+                    //! Add a limit to this to stop entropy
                     var text = document.createElement("div");
                     var trimmed_date = element.created_at.substring(0,10);
                     var trimmed_note = element.note.substring(0,8) + "...";
@@ -56,13 +56,13 @@
 
                 // Load the chart library and draw the chart after the data is fetched and processed
                 google.charts.load('current', {'packages':['corechart']});
-                google.charts.setOnLoadCallback(drawChart);
+                google.charts.setOnLoadCallback(drawSideChart);
             })
             .catch((error) => {
                 alert(error)
             });
 
-            function drawChart() {
+            function drawSideChart() {
             var data = google.visualization.arrayToDataTable(window.data_for_the_chart);
 
             var options = {
